@@ -7,5 +7,5 @@ def return_all():
     return render_template(make_response(jsonify({"Nome": "Gabriel"})))
 
 
-if __name__ == "__name__":
+if __name__ == "__main__":
     app.run(host="localhost", port=5500)
