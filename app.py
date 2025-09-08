@@ -1,11 +1,13 @@
-from flask import Flask, make_response, jsonify, render_template
+from flask import Flask, jsonify, render_template, make_response
+import utils as ut
 
 app = Flask(__name__)
 
-@app.route("/all", methods=["GET"])
+@app.route("/users", methods=["GET"])
 def return_all():
-    return make_response(jsonify({"Nome": "Gabriel"}))
+    users = ut.return_users()
+    return make_response(jsonify(users))
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5700)
